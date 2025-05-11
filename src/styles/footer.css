@@ -1,0 +1,75 @@
+footer {
+    display: flex;
+    justify-content: center;
+
+    background-color: #23242C;
+
+    padding: 1.25rem;
+
+    & .div-botao-agendar {
+        display: flex;
+        align-items: center;
+
+        /* padding: 0.75rem 1.25rem; */
+
+        border: 1px solid var(--color-content-brand);
+
+        border-radius: 0.5rem;
+
+        background-color: var(--color-content-brand);
+
+        box-shadow:
+            0 0 10px rgba(146, 130, 250, 0.3),
+            0 0 40px rgba(146, 130, 250, 0.4);
+
+        width: fit-content;
+
+        & .link-botao-agendar {
+            display: block;
+            padding: 0.75rem 1.25rem;
+
+            text-transform: uppercase;
+
+            font: var(--font-label-large);
+            color: #050505;
+
+            border-radius: inherit;
+            
+            width: 100%;
+            height: 100%;
+
+            cursor: pointer;
+        }
+
+        & .link-botao-agendar:hover {
+            background-color: var(--color-background-highlight);
+        }
+    }
+
+    /* & .div-botao-agendar:hover {
+        background-color: var(--color-background-highlight);
+
+        .link-botao-agendar {
+            background-color: var(--color-background-highlight);
+        }
+    } */
+}
+
+@media (min-width: 48rem) {
+    footer {
+        display: flex;
+        justify-content: right;
+
+        background-color: var(--color-background-primary);
+
+        position: relative;
+    }
+
+    & .div-botao-agendar {
+        position: fixed;
+        right: 2rem;
+        bottom: 2rem;
+
+        z-index: 1000;
+    }
+}

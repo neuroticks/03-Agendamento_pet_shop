@@ -1,0 +1,85 @@
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    margin-top: 2.5rem;
+
+    & .title {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        h1 {
+            font: var(--font-title);
+            color: #F5F4F5;
+        }
+
+        p {
+            font: var(--font-paragraph-medium);
+            color: var(--color-content-secondary);
+        }
+    }
+
+    /* div class */
+    & .selected-day {
+        display: flex;
+        align-items: center;
+        /* align-content: center; */
+        align-self: start;
+        justify-content: start;
+        gap: .5rem;
+
+        border: 1px solid var(--color-border-primary);
+        border-radius: 0.5rem;
+
+        padding: 0.75rem;
+
+
+        input[type="date"] {
+            font: 400 1rem/1.5 var(--ff-inter);
+            color: var(--color-content-secondary);
+
+            background-color: var(--color-background-primary);
+
+            width: 9rem;
+
+            position: relative;
+
+            border: none;
+
+            &::-webkit-calendar-picker-indicator {
+                opacity: 0;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                background: url(../assets/Icon.svg) center/contain no-repeat;
+                /* alinha a 1rem da margem direira */
+                right: 0.75rem;
+                /* estabelece o tamanho do ícone */
+                width: 1.25rem;
+                height: 1.25rem;
+                /* define seu topo na linha de 50% da altura da input */
+                top: 50%;
+                /* desloca o icone no seu eixo Y em -50% do seu tamanho */
+                transform: translateY(-50%);
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 48rem) {
+
+    header {
+        flex-direction: row;
+
+        & .selected-day {
+            margin-top: 0.875rem;
+        }
+
+    }
+}

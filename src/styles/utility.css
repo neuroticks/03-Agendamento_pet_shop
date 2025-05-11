@@ -1,0 +1,37 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 0.75rem 1.25rem;
+
+    margin-inline: auto;
+
+    min-width: 26rem;
+    max-width: 26rem;
+    width: 90%;
+
+}
+
+/* 
+a partir de:
+ 288px = 18rem
+ 400px = 25rem
+ 420px = 26.25rem
+ 480px = 30rem
+ 768px = 48rem 
+ 864px = 54rem
+1024px = 64rem 
+1280px = 80rem 
+*/
+@media (min-width: 48rem) {
+
+    .app-container {
+        /* flex-direction: row; */
+
+        /* padding: 5rem; */
+
+        max-width: 45rem;
+        width: 80%;
+    }
+}

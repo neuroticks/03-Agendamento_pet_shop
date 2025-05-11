@@ -1,0 +1,162 @@
+.agendamentos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    & .schedule-period {
+        background-color: var(--color-background-tertiary);
+
+        border-radius: 0.625rem;
+
+        & header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            margin: 0;
+
+            border-bottom: 1px solid #2E2C30;
+
+            gap: 0.75rem;
+
+            padding: 0.75rem 1.25rem;
+
+            & strong {
+                font: var(--font-label-large);
+            }
+
+            & span {
+                font: var(--font-label-large);
+                color: var(--color-content-secondary);
+
+                margin-left: auto;
+            }
+        }
+
+        & ul {
+            list-style-type: none;
+
+            padding: 1.25rem;
+
+            & li {
+                display: grid;
+                grid-template-areas: "hora nomes"
+                    "servico servico"
+                    "remover remover";
+                grid-template-columns: 15% 85%;
+
+                align-items: center;
+
+                gap: .5rem;
+
+                padding: 0.75rem;
+
+                & strong {
+                    grid-area: hora;
+
+                    font: var(--font-label-medium);
+                    color: var(--color-content-primary);
+                }
+
+                & span {
+                    grid-area: nomes;
+
+                    font: var(--font-paragraph-medium);
+                    color: var(--color-content-secondary);
+                }
+
+                & span strong {
+                    font: var(--font-label-medium);
+                    color: var(--color-content-primary);
+                }
+
+                & p {
+                    grid-area: servico;
+
+                    font: var(--font-paragraph-medium);
+                    color: var(--color-content-secondary);
+                }
+
+                & a {
+                    grid-area: remover;
+
+                    display: flex;
+                    justify-content: right;
+
+                    width: 100%;
+
+                    margin-left: auto;
+
+                    font: var(--font-paragraph-small);
+                    color: var(--color-content-tertiary);
+
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 48rem) {
+
+    .agendamentos {
+        & .schedule-period {
+
+            & header {
+
+                & strong {
+                    font: var(--font-label-large);
+                }
+
+                & span {
+                    font: var(--font-label-large);
+                    color: var(--color-content-secondary);
+
+                    margin-left: auto;
+                }
+            }
+
+            & ul {
+                list-style-type: none;
+
+                padding: 1.25rem;
+
+                & li {
+                    grid-template-areas: "hora nomes servico remover";
+                    grid-template-columns: 10% 30% 30% 30%;
+                    /* align-items: center; */
+                    justify-content: space-between;
+                    gap: .5rem;
+
+                    padding: 0.75rem;
+
+                    width: 100%;
+
+                    & strong {
+                        /* text-align: center; */
+                        font: var(--font-label-medium);
+                        color: var(--color-content-primary);
+                    }
+
+                    & span {
+                        /* text-align: center; */
+                        font: var(--font-paragraph-medium);
+                        color: var(--color-content-secondary);
+                    }
+
+                    & p {
+                        /* text-align: center; */
+                        font: var(--font-paragraph-medium);
+                        color: var(--color-content-secondary);
+                    }
+
+                    & a {
+                        font: var(--font-paragraph-small);
+                        color: var(--color-content-tertiary);
+                    }
+                }
+            }
+        }
+    }
+
+}

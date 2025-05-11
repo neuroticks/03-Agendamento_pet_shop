@@ -1,1 +1,6 @@
 @import url(global.css);
+@import url(utility.css);
+@import url(logo.css);
+@import url(header.css);
+@import url(schedules.css);
+@import url(footer.css);
