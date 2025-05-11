@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop Schedule</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="logo">
+            <img src="./src/assets/logo.svg" alt="Imagem da logo Mundo Pet">
+        </div>
+        <header>
+            <div class="title">
+                <h1>Sua agenda</h1>
+                <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
+            </div>
+            <div class="selected-day">
+                <!-- <div class="input"> -->
+                <img src="./src/assets/Calendar.svg" alt="Dia selecionado" />
+                <input type="date" id="date" name="date" required />
+                <!-- </div> -->
+            </div>
+        </header>
+        <div class="agendamentos">
+            <section class="schedule-period">
+                <header>
+                    <img src="./src/assets/Sun-Fog.svg" alt="Agendar a Tarde" />
+                    <strong>Manhã</strong>
+                    <span>09h-12h</span>
+                </header>
+                <ul id="period-morning" class="period">
+                    <!-- Exemplo  -->
+                    <li>
+                        <strong>11:00</strong>
+                        <span><strong>Luna</strong> / Rodrigo Ferraro</span>
+                        <p>Corte de Unhas</p>
+                        <a href="" class="del-agendamento">Remover agendamento</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="schedule-period">
+                <header>
+                    <img src="./src/assets/Cloud-Sun.svg" alt="Agendar pela Manhã" />
+                    <strong>Tarde</strong>
+                    <span>13h-18h</span>
+                </header>
+                <ul id="period-afternoon" class="period">
+                    <!-- Exemplo  -->
+                    <li>
+                        <strong>16:00</strong>
+                        <span><strong>Lupi</strong> / Regina e Moaci</span>
+                        <p>Banho e tosa</p>
+                        <a href="" class="del-agendamento">Remover agendamento</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="schedule-period">
+                <header>
+                    <img src="./src/assets/Moon.svg" alt="Agendar a Noite" />
+                    <strong>Noite</strong>
+                    <span>19h-21h</span>
+                </header>
+                <ul id="period-night" class="period">
+                    <!-- Exemplo  -->
+                    <li>
+                        <strong>19:00</strong>
+                        <span><strong>Bolinha</strong> / Nelson</span>
+                        <p>Banho tira graxa</p>
+                        <a href="" class="del-agendamento">Remover agendamento</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <footer>
+            <div class="div-botao-agendar">
+                <a href="" class="link-botao-agendar">novo agendamento</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
