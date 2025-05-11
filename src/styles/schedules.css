@@ -65,11 +65,6 @@
                     color: var(--color-content-secondary);
                 }
 
-                & span strong {
-                    font: var(--font-label-medium);
-                    color: var(--color-content-primary);
-                }
-
                 & p {
                     grid-area: servico;
 
@@ -91,6 +86,12 @@
                     color: var(--color-content-tertiary);
 
                     cursor: pointer;
+
+                    &:hover {
+                        font: var(--font-link);
+                        color: var(--color-content-primary);
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -124,7 +125,6 @@
                 & li {
                     grid-template-areas: "hora nomes servico remover";
                     grid-template-columns: 10% 30% 30% 30%;
-                    /* align-items: center; */
                     justify-content: space-between;
                     gap: .5rem;
 
@@ -133,19 +133,16 @@
                     width: 100%;
 
                     & strong {
-                        /* text-align: center; */
                         font: var(--font-label-medium);
                         color: var(--color-content-primary);
                     }
 
                     & span {
-                        /* text-align: center; */
                         font: var(--font-paragraph-medium);
                         color: var(--color-content-secondary);
                     }
 
                     & p {
-                        /* text-align: center; */
                         font: var(--font-paragraph-medium);
                         color: var(--color-content-secondary);
                     }
