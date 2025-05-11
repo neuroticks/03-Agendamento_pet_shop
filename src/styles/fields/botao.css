@@ -16,9 +16,9 @@ footer {
 
         background-color: var(--color-content-brand);
 
-        box-shadow:
+        /* box-shadow:
             0 0 10px rgba(146, 130, 250, 0.3),
-            0 0 40px rgba(146, 130, 250, 0.4);
+            0 0 40px rgba(146, 130, 250, 0.4); */
 
         width: fit-content;
 
