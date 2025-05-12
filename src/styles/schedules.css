@@ -51,6 +51,8 @@
 
                 padding: 0.75rem;
 
+                border-bottom: 1px solid var(--color-border-divisor);
+
                 & strong {
                     grid-area: hora;
 

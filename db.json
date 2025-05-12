@@ -1,3 +1,32 @@
 {
-  "agendamentos": []
+  "agendamentos": [
+    {
+      "id": "1",
+      "when": "2025-05-12T12:00:00.000-03:00",
+      "pet_name": "Pituka",
+      "name": "Rodrigo Ferraro da Silva",
+      "servico": "Banho e tosa"
+    },
+    {
+      "id": "2",
+      "when": "2025-05-12T09:00:00.000-03:00",
+      "pet_name": "Luna",
+      "name": "Rodrigo",
+      "servico": "Tosa higiênica"
+    },
+    {
+      "id": "3",
+      "when": "2025-05-12T15:00:00.000-03:00",
+      "pet_name": "Lupi",
+      "name": "Regina Moacy Henrique Cecília",
+      "servico": "Banho e tosa"
+    },
+    {
+      "id": "4",
+      "when": "2025-05-12T20:00:00.000-03:00",
+      "pet_name": "Canino",
+      "name": "Erik Ferraro",
+      "servico": "Banho, tosa, unhas, dentes"
+    }
+  ]
 }

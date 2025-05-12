@@ -17,59 +17,75 @@
 </head>
 
 <body>
-    <div class="form-container">
-        <header class="titulo-form-agendar">
-            <h1>Agende um atendimento</h1>
-            <p>Preencha os dados do cliente para realizar o agendamento:</p>
-        </header>
-        <div class="div-fields">
-            <div class="input-wrapper">
-                <label for="nome-tutor">Nome do tutor</label>
-                <div class="input-field">
-                    <img src="./src/assets/User.svg" alt="">
-                    <input type="text" id="nome-tutor" id="nome-tutor" placeholder="Helena Souza">
-                </div>
-            </div>
-            <div class="input-wrapper">
-                <label for="nome-pet">Nome do pet</label>
-                <div class="input-field">
-                    <img src="./src/assets/Pet-Paw.svg" alt="">
-                    <input type="text" id="nome-pet" id="nome-pet" placeholder="Cheddar">
-                </div>
-            </div>
-            <div class="input-wrapper">
-                <label for="phone">Telefone</label>
-                <div class="input-field">
-                    <img src="./src/assets/Phone.svg" alt="">
-                    <input type="text" id="phone" id="phone" placeholder="(00) 0 0000-0000">
-                </div>
-            </div>
-            <div class="text-wrapper">
-                <label for="service">Descrição do serviço</label>
-                <div class="text-field">
-                    <textarea id="service" id="service" placeholder="Banho e tosa"></textarea>
-                </div>
-            </div>
-            <div class="data-hora">
-                <div class="input-wrapper">
-                    <label for="service-date">Data</label>
-                    <div class="input-field">
-                        <img src="./src/assets/Calendar.svg" alt="">
-                        <input type="date" id="service-date" name="service-date" required value="2025-05-12"/>
-                    </div>
-                </div>
-                <div class="input-wrapper">
-                    <label for="service-time">Hora</label>
-                    <div class="input-field">
-                        <img src="./src/assets/Clock.svg" alt="">
-                        <input type="time" id="service-time" name="service-time" required value="12:00"/>
-                    </div>
-                </div>
-            </div>
+    <div class="app-container">
+        <div class="logo">
+            <img src="./src/assets/logo.svg" alt="Imagem da logo Mundo Pet">
         </div>
-        <footer class="form-footer">
-            <div class="botao-agendar">
-                <a href="">agendar</a>
+        <header>
+            <div class="title">
+                <h1>Sua agenda</h1>
+                <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
+            </div>
+            <div class="selected-day">
+                <!-- <div class="input"> -->
+                <img src="./src/assets/Calendar.svg" alt="Dia selecionado" />
+                <input type="date" id="date" name="date" required value="2025-05-12"/>
+                <!-- </div> -->
+            </div>
+        </header>
+        <div class="agendamentos">
+            <section class="schedule-period">
+                <header>
+                    <img src="./src/assets/Sun-Fog.svg" alt="Agendar a Tarde" />
+                    <strong>Manhã</strong>
+                    <span>09h-12h</span>
+                </header>
+                <ul id="period-morning" class="period">
+                    <!-- Exemplo  -->
+                    <li>
+                        <strong>11:00</strong>
+                        <strong>Luna</strong><span> / Rodrigo Ferraro</span>
+                        <p>Corte de Unhas</p>
+                        <a href="" class="del-agendamento">Remover agendamento</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="schedule-period">
+                <header>
+                    <img src="./src/assets/Cloud-Sun.svg" alt="Agendar pela Manhã" />
+                    <strong>Tarde</strong>
+                    <span>13h-18h</span>
+                </header>
+                <ul id="period-afternoon" class="period">
+                    <!-- Exemplo  -->
+                    <li>
+                        <strong>16:00</strong>
+                        <span><strong>Lupi</strong> / Regina e Moaci</span>
+                        <p>Banho e tosa</p>
+                        <a href="" class="del-agendamento">Remover agendamento</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="schedule-period">
+                <header>
+                    <img src="./src/assets/Moon.svg" alt="Agendar a Noite" />
+                    <strong>Noite</strong>
+                    <span>19h-21h</span>
+                </header>
+                <ul id="period-night" class="period">
+                    <!-- Exemplo  -->
+                    <li>
+                        <strong>19:00</strong>
+                        <span><strong>Bolinha</strong> / Nelson</span>
+                        <p>Banho tira graxa</p>
+                        <a href="" class="del-agendamento">Remover agendamento</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <footer>
+            <div class="div-botao-agendar">
+                <a href="" class="link-botao-agendar">novo agendamento</a>
             </div>
         </footer>
     </div>

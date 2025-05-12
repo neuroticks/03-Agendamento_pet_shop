@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop Schedule</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="form-container">
+        <header class="titulo-form-agendar">
+            <h1>Agende um atendimento</h1>
+            <p>Preencha os dados do cliente para realizar o agendamento:</p>
+        </header>
+        <div class="div-fields">
+            <div class="input-wrapper">
+                <label for="nome-tutor">Nome do tutor</label>
+                <div class="input-field">
+                    <img src="./src/assets/User.svg" alt="">
+                    <input type="text" id="nome-tutor" id="nome-tutor" placeholder="Helena Souza">
+                </div>
+            </div>
+            <div class="input-wrapper">
+                <label for="nome-pet">Nome do pet</label>
+                <div class="input-field">
+                    <img src="./src/assets/Pet-Paw.svg" alt="">
+                    <input type="text" id="nome-pet" id="nome-pet" placeholder="Cheddar">
+                </div>
+            </div>
+            <div class="input-wrapper">
+                <label for="phone">Telefone</label>
+                <div class="input-field">
+                    <img src="./src/assets/Phone.svg" alt="">
+                    <input type="text" id="phone" id="phone" placeholder="(00) 0 0000-0000">
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <label for="service">Descrição do serviço</label>
+                <div class="text-field">
+                    <textarea id="service" id="service" placeholder="Banho e tosa"></textarea>
+                </div>
+            </div>
+            <div class="data-hora">
+                <div class="input-wrapper">
+                    <label for="service-date">Data</label>
+                    <div class="input-field">
+                        <img src="./src/assets/Calendar.svg" alt="">
+                        <input type="date" id="service-date" name="service-date" required value="2025-05-12"/>
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <label for="service-time">Hora</label>
+                    <div class="input-field">
+                        <img src="./src/assets/Clock.svg" alt="">
+                        <input type="time" id="service-time" name="service-time" required value="12:00"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="form-footer">
+            <div class="botao-agendar">
+                <a href="">agendar</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
