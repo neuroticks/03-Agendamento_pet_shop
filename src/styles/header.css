@@ -76,6 +76,7 @@ header {
 
     header {
         flex-direction: row;
+        justify-content: space-between;
 
         & .selected-day {
             margin-top: 0.875rem;
