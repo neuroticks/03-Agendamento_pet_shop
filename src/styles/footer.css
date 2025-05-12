@@ -45,14 +45,6 @@
             background-color: var(--color-background-highlight);
         }
     }
-
-    /* & .div-botao-agendar:hover {
-        background-color: var(--color-background-highlight);
-
-        .link-botao-agendar {
-            background-color: var(--color-background-highlight);
-        }
-    } */
 }
 
 @media (min-width: 48rem) {
