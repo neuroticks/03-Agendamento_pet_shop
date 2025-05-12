@@ -1,10 +1,10 @@
 import { scheduleFetchByDay } from "../../sevices/schedule-fetch-by-day.js"
 import { hoursLoad } from "../form/hours-load"
 import { scheduleShow } from "./show.js"
+import dayjs from "dayjs"
 
 // seleciona o input de data
-const selectedDate = document.getElementById("date")
-
+const dateSelect = document.getElementById("date")
 
 export async function schedulesDay() {
 
@@ -12,7 +12,7 @@ export async function schedulesDay() {
     console.log("schedulesDay()")
 
     // obtem a data selecionada na tela principal (que lista os agendamentos/ horários disponíveis)
-    const date = selectedDate.value
+    const date = dateSelect.value
 
     // busca na API os agendamentos
     const dailySchedules = await scheduleFetchByDay({ date })
@@ -25,4 +25,10 @@ export async function schedulesDay() {
     // desabilita os horários não disponíveis
     // To-Do -- deve ser revisto
     //hoursLoad({ date, dailySchedules })
+}
+
+export function setTodayDate() {
+
+    const hoje = dayjs().format("YYYY-MM-DD").toString()
+    dateSelect.value = hoje
 }
