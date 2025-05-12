@@ -80,8 +80,6 @@
                     display: flex;
                     justify-content: right;
 
-                    width: 100%;
-
                     margin-left: auto;
 
                     font: var(--font-paragraph-small);
@@ -95,6 +93,10 @@
                         text-decoration: underline;
                     }
                 }
+            }
+
+            & li:last-child {
+                border-bottom: none;
             }
         }
     }
@@ -126,7 +128,7 @@
 
                 & li {
                     grid-template-areas: "hora nomes servico remover";
-                    grid-template-columns: 10% 30% 30% 30%;
+                    grid-template-columns: 10% 30% 30% 25%;
                     justify-content: space-between;
                     gap: .5rem;
 
