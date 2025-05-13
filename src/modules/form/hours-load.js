@@ -1,65 +1,50 @@
 import dayjs from "dayjs"
 import { openingHours } from "../../utils/opening-hours"
-import { hoursClick } from "./hours-click"
+//import { hoursClick } from "./hours-click"
 
-const hours = document.getElementById("hours")
+const serviceHourSelect = document.getElementById("service-time")
 
-export function hoursLoad( { date, dailySchedules }) {
+export function loadSelectHoursAvailable({ date, temp_datas_reservadas }) {
     // limpa a lista de horarios
-    hours.innerHTML = ""
-    
-    const unavailableHours = dailySchedules.map ((schedule) => 
+    serviceHourSelect.innerHTML = ""
+
+    // console.log("======================")
+    // console.log(temp_datas_reservadas)
+
+    const horaJaReservada = temp_datas_reservadas.map((schedule) =>
         dayjs(schedule.when).format("HH:mm")
     )
 
-    // console.log(unavailableHours)
+    // console.log(horaJaReservada)
 
-    const opening = openingHours.map((hour) => {
-        const [scheduleHour] = hour.split(":")
+    const horaDisponibilidade = openingHours.map((hour) => {
+        // console.log(`PRIMEIRO [hour]=${hour}`)
+        const [horaAtendimento] = hour.split(":")
 
-        // console.log(`analisando horario ${hour}`)
+        const isHourAfterNow = dayjs(date).add(horaAtendimento, "hour").isAfter(dayjs())
+        // console.log(`SEGUNDO [isHourAfterNow]=${isHourAfterNow}`)
 
-        const isHourAfterNow = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs())
-        // console.log(`isHourAfterNow = ${isHourAfterNow}`)
-
-        const isHourAlreadyScheduled = unavailableHours.includes(hour)
-        // console.log(`isHourAlreadyScheduled = ${isHourAlreadyScheduled}`)
+        const isHourAlreadyScheduled = horaJaReservada.includes(hour)
+        // console.log(`TERCEIRO [isHourAlreadyScheduled]=${isHourAlreadyScheduled}`)
 
         // define se horario esta disponível
+        // console.log(`QUARTO [AVAILABLE]=${(isHourAfterNow && !isHourAlreadyScheduled)}`)
         return {
             hour,
             available: (isHourAfterNow && !isHourAlreadyScheduled)
         }
     })
 
-    opening.forEach(({ hour, available }) => {
-        const li = document.createElement("li")
-
-        li.classList.add("hour")
-        li.classList.add(available ? "hour-available" : "hour-unavailable")
-
-        li.textContent = hour
-
-        if (hour === "09:00"){
-            hourHeaderAdd("Manhã")
+    horaDisponibilidade.forEach(({ hour, available }) => {
+        // console.log(` - - - - - [${hour}] - [${available}]`)
+        const option = document.createElement('option');
+        if (available) {
+            option.value = hour;
+            option.textContent = hour;
+            serviceHourSelect.appendChild(option);
         }
-        else if (hour === "13:00"){
-            hourHeaderAdd("Tarde")
-        }
-        else if (hour === "18:00"){
-            hourHeaderAdd("Noite")
-        }
-
-        hours.append(li)
     })
 
-    hoursClick()
-}
-
-function hourHeaderAdd( title ){
-    const header = document.createElement("li")
-    header.classList.add("hour-period")
-    header.textContent = title
-
-    hours.append(header)
+    console.log(serviceHourSelect)
+    //hoursClick()
 }
