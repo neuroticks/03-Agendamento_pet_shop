@@ -4,12 +4,13 @@ const periodMorning = document.getElementById("period-morning")
 const periodAfternoon = document.getElementById("period-afternoon")
 const periodNight = document.getElementById("period-night")
 
+/*
+Cria os elementos HTML para a lista de agendamentos
+*/
 export function scheduleShow({ dailySchedules }) {
     try {
-
-        // console.log("file [modules/schedules/show.js]")
-        // console.log("scheduleShow({dailySchedules})")
-
+        console.log("Cria os elementos HTML para a lista de agendamentos")
+        console.log(`file [schedules/show.js] function[scheduleShow]`)
 
         periodMorning.innerHTML = ""
         periodAfternoon.innerHTML = ""
@@ -18,8 +19,6 @@ export function scheduleShow({ dailySchedules }) {
         dailySchedules.sort((a, b) => new Date(a.when) - new Date(b.when))
 
         dailySchedules.forEach((agendamento) => {
-            // console.log("dailySchedules recebidos na [scheduleShow]")
-            // console.log(agendamento)
 
             const item = document.createElement("li")
             const hora = document.createElement("strong")
@@ -30,13 +29,7 @@ export function scheduleShow({ dailySchedules }) {
             item.setAttribute("data-id", agendamento.id)
 
             hora.textContent = dayjs(agendamento.when).format("HH:mm")
-            //pet_name.textContent = agendamento.pet_name
-            //nome.appendChild(pet_name)
             nome.innerHTML = "<strong>" + agendamento.pet_name + "</strong> / " + agendamento.name
-
-            // console.log("-- nome --")
-            // console.log(nome)
-
             servico.textContent = agendamento.servico
 
             const cancelLink = document.createElement("a")
