@@ -1,20 +1,23 @@
 import dayjs from "dayjs"
 import { openingHours } from "../../utils/opening-hours"
-//import { hoursClick } from "./hours-click"
+import { scheduleFetchByDay } from "../../sevices/schedule-fetch-by-day"
 
+const serviceDateSelect = document.getElementById("service-date")
 const serviceHourSelect = document.getElementById("service-time")
 
-export function loadSelectHoursAvailable({ date, temp_datas_reservadas }) {
+export async function loadSelectHoursAvailable() {
+    // data usada para consulta
+    const date = serviceDateSelect.value
+    // agendamentos dessa data
+    const temp_datas_reservadas = await scheduleFetchByDay({ date })
+    // console.log(temp_datas_reservadas)
+
     // limpa a lista de horarios
     serviceHourSelect.innerHTML = ""
-
-    // console.log("======================")
-    // console.log(temp_datas_reservadas)
 
     const horaJaReservada = temp_datas_reservadas.map((schedule) =>
         dayjs(schedule.when).format("HH:mm")
     )
-
     // console.log(horaJaReservada)
 
     const horaDisponibilidade = openingHours.map((hour) => {
@@ -46,5 +49,4 @@ export function loadSelectHoursAvailable({ date, temp_datas_reservadas }) {
     })
 
     console.log(serviceHourSelect)
-    //hoursClick()
 }
