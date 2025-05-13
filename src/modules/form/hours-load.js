@@ -1,4 +1,4 @@
-import dayjs from "dayjs"
+import dayjs from "../../libs/dayjs"
 import { openingHours } from "../../utils/opening-hours"
 import { scheduleFetchByDay } from "../../sevices/schedule-fetch-by-day"
 
@@ -25,6 +25,14 @@ export async function loadSelectHoursAvailable() {
         const [horaAtendimento] = hour.split(":")
 
         const isHourAfterNow = dayjs(date).add(horaAtendimento, "hour").isAfter(dayjs())
+        // const temp_agora = new Date()
+        // console.log(`SEGUNDO [temp_agora]=${temp_agora}`)
+        // const temp_dayjs = dayjs().format()
+        // console.log(`SEGUNDO [temp_dayjs]=${temp_dayjs}`)
+        // const dayjs_locale = dayjs.locale()
+        // console.log(`SEGUNDO [dayjs_locale]=${dayjs_locale}`)
+        // console.log(`SEGUNDO [dayjs()]=${dayjs()}`)
+        // console.log(`SEGUNDO [dayjs(date).add(horaAtendimento, "hour")]=${dayjs(date).add(horaAtendimento, "hour")}`)
         // console.log(`SEGUNDO [isHourAfterNow]=${isHourAfterNow}`)
 
         const isHourAlreadyScheduled = horaJaReservada.includes(hour)

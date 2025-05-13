@@ -1,4 +1,4 @@
-import dayjs from "dayjs"
+import dayjs from "../../libs/dayjs"
 
 const periodMorning = document.getElementById("period-morning")
 const periodAfternoon = document.getElementById("period-afternoon")
