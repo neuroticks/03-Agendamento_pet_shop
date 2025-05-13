@@ -3,8 +3,7 @@
     grid-template-columns: 48% 48%;
     gap: 1rem;
 
-    input[type="date"],
-    input[type="time"] {
+    input[type="date"] {
         background-color: transparent;
 
         font: 400 1rem/1.5 var(--ff-inter);
@@ -37,8 +36,38 @@
     }
 
     & .input-field {
+        height: 70%;
+
         & img {
             margin: 0.25rem;
         }
     }
+
+    select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        background-color: transparent;
+
+        font: 400 1rem/1.5 var(--ff-inter);
+        color: var(--color-content-secondary);
+
+        height: 100%;
+        width: 100%;
+
+        position: relative;
+
+        margin: none;
+        outline: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        background-image: url(../../assets/Icon.svg);
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 1rem;
+    }
+
 }
